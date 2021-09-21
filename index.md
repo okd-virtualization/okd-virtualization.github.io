@@ -1,10 +1,7 @@
-# OKD Virtualization
-## Special Interest Group
-
-## Goals
+# Goals
 Provide an integrated solution for classical virtualization users based on OKD, HCO, and KubeVirt, including a graphical user interface and deployed using bare metal suited method.
 
-## Projects
+# Projects
 
 * OKD - as the platform
 * KubeVirt - as the virtualization plugin
@@ -13,27 +10,27 @@ Provide an integrated solution for classical virtualization users based on OKD, 
 * Medik8s and NHC for high-availability
 * Konveyor for migration from other platforms
 
-## Deployment
+# Deployment
 
 * UPI first
 * Assisted Installer? for easy provisioning of OKD on bare-metal nodes
 
-## Mailing List & Slack
+# Mailing List & Slack
 
 OKD Workgroup Google Group: <https://groups.google.com/forum/#!forum/okd-wg>
 
 Slack Channel: <https://kubernetes.slack.com/messages/openshift-dev>
 
-## Announcements
+# Announcements
 
 
-## TODO
+# TODO
 
 * some social activity like a blog post and more upstream documentation
 
 * just as a general comment (I don't have "real" data), I want to add that on CI side we are more flaky on OKD than on OCP: nothing so serious, but we see more false positives on OKD lanes than on OCP ones
 
-## SIG Membership
+# SIG Membership
 
  * [Fabian Deutsch](https://github.com/fabiand) (Red Hat)
  * [Sandro Bonazzola](https://github.com/sandrobonazzola) (Red Hat)
@@ -41,7 +38,7 @@ Slack Channel: <https://kubernetes.slack.com/messages/openshift-dev>
  * [Michal Skrivanek](https://github.com/michalskrivanek)
 
 
-## Information on getting Started within the SIG
+# Information on getting Started within the SIG
 
 Resources:
 
