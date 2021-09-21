@@ -5,7 +5,7 @@ options = {
   check_img_http: true,
   check_html: true,
   empty_alt_ignore: true,
-  disable_external: true,
+  disable_external: false,
   allow_hash_href: true,
   check_opengraph: true,
   only_4xx: true,
