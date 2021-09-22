@@ -1,3 +1,7 @@
+---
+title: OKD Virtualization
+---
+
 # Goals
 Provide an integrated solution for classical virtualization users based on OKD, HCO, and KubeVirt, including a graphical user interface and deployed using bare metal suited method.
 
@@ -34,19 +38,13 @@ Slack Channel: <https://kubernetes.slack.com/messages/openshift-dev>
 
  * [Fabian Deutsch](https://github.com/fabiand) (Red Hat)
  * [Sandro Bonazzola](https://github.com/sandrobonazzola) (Red Hat)
- * [Simone Tiraboschi](https://github.com/tiraboschi)
- * [Michal Skrivanek](https://github.com/michalskrivanek)
+ * [Simone Tiraboschi](https://github.com/tiraboschi) (Red Hat)
+ * [Michal Skrivanek](https://github.com/michalskrivanek) (Red Hat)
 
 
-# Information on getting Started within the SIG
+# Resources for the SIG
 
-Resources:
-
-OKD Workgroup recordings: <https://www.youtube.com/playlist?list=PLaR6Rq6Z4Iqc3WjZB-rUTPru8RKyOCnBo>
-
-OKD Workgroup meeting proposed agenda and previous meetings notes: <https://hackmd.io/YJBn04R5TDi5Sm9XbOGwZA>
-
-Automation in place:
+## Automation in place:
 
 HCO main branch gets tested against OKD 4.9: <https://github.com/openshift/release/blob/master/ci-operator/config/kubevirt/hyperconverged-cluster-operator/kubevirt-hyperconverged-cluster-operator-main__okd.yaml>
 
