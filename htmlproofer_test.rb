@@ -10,6 +10,7 @@ options = {
   check_opengraph: true,
   only_4xx: true,
   http_status_ignore: [429,403],
+  url_ignore: [ /github.com.*okd-virtualization.*edit.*/ ],
   parallel: { in_processes: 8 },
   cache: { timeframe: '6w' },
 }
