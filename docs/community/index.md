@@ -3,6 +3,23 @@
 The OKD Virtualization SIG is a group of people just like you who are aiming to promote the adoption of the virtualization
 components on OKD, the community distribution of Kubernetes that powers Red Hat OpenShift.
 
+<div markdown=1 id="social">
+## Social Media
+### Twitter
+
+<a href="https://twitter.com/OKD_Virt_SIG?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @OKD_Virt_SIG</a>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> <a href="https://twitter.com/intent/tweet?screen_name=OKD_Virt_SIG&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet to @OKD_Virt_SIG</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<a class="twitter-timeline" href="https://twitter.com/OKD_Virt_SIG?ref_src=twsrc%5Etfw">Tweets by OKD_Virt_SIG</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+### Reddit
+* [r/OKD Virtualization](https://www.reddit.com/r/OKD_Virtualization/)
+
+### Youtube
+[OKD Workgroup meeting](https://www.youtube.com/playlist?list=PLaR6Rq6Z4Iqc3WjZB-rUTPru8RKyOCnBo)
+</div>
+
+
 # Getting started as a user (future contributor!)
 
 Before getting started, please read our [community etiquette guidelines](/community/community-guidelines.html).
@@ -33,7 +50,7 @@ Please try to deploy and use OKD Virtualization and report issues in our [GitHub
 
 ## Documentation
 
-OKD Virtualization documentation is mostly included in [GitHub openshift-docs](https://github.com/openshift/openshift-docs)] repository.
+OKD Virtualization documentation is mostly included in [GitHub openshift-docs](https://github.com/openshift/openshift-docs) repository.
 
 The documents included within this website are included in [our GitHub repository](https://github.com/okd-virtualization/okd-virtualization.github.io)
 
@@ -43,6 +60,3 @@ OKD Virtualization SIG is still in its early days.
 
 If you are using, supporting or providing services with OKD Virtualization we would like to share your story here!
 
-## Social Media
-
-OKD Workgroup meeting recordings are available on [YouTube](https://www.youtube.com/playlist?list=PLaR6Rq6Z4Iqc3WjZB-rUTPru8RKyOCnBo)
