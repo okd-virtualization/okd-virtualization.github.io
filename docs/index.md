@@ -25,9 +25,6 @@ OKD Workgroup Google Group: <https://groups.google.com/forum/#!forum/okd-wg>
 
 Slack Channel: <https://kubernetes.slack.com/messages/openshift-dev>
 
-# Announcements
-
-
 # TODO
 
 * some social activity like a blog post and more upstream documentation
