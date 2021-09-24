@@ -3,21 +3,23 @@ title: OKD Virtualization
 ---
 
 # Goals
-Provide an integrated solution for classical virtualization users based on OKD, HCO, and KubeVirt, including a graphical user interface and deployed using bare metal suited method.
+Provide an integrated solution for classical virtualization users based on [OKD](https://www.okd.io/),
+[HCO](https://github.com/kubevirt/hyperconverged-cluster-operator) and [KubeVirt](http://kubevirt.io/),
+including a graphical user interface and deployed using bare metal suited method.
 
 # Projects
 
-* OKD - as the platform
-* KubeVirt - as the virtualization plugin
-* HyperConverged Cluster Operator (HCO) - for supporting tools
-* Rook? (Or whatever the upstream operator is called) for feature rich data storage
-* Medik8s and NHC for high-availability
-* Konveyor for migration from other platforms
+* [OKD](https://www.okd.io/) - as the platform
+* [KubeVirt](http://kubevirt.io/) - as the virtualization plugin
+* [HyperConverged Cluster Operator (HCO)](https://github.com/kubevirt/hyperconverged-cluster-operator) - for supporting tools
+* [Rook](https://rook.io/)? (Or whatever the upstream operator is called) for feature rich data storage
+* [Medik8s](https://www.medik8s.io/) and [NHC](https://github.com/medik8s/node-healthcheck-operator) for high-availability
+* [Konveyor](https://www.konveyor.io/) for migration from other platforms
 
 # Deployment
 
-* UPI first
-* Assisted Installer? for easy provisioning of OKD on bare-metal nodes
+* [UPI](https://docs.okd.io/latest/installing/installing_bare_metal/installing-bare-metal.html) first
+* [Assisted Installer](https://github.com/openshift/assisted-installer)? for easy provisioning of OKD on bare-metal nodes
 
 # Mailing List & Slack
 
