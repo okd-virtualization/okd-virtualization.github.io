@@ -15,6 +15,7 @@ including a graphical user interface and deployed using bare metal suited method
 * [Rook](https://rook.io/)? (Or whatever the upstream operator is called) for feature rich data storage
 * [Medik8s](https://www.medik8s.io/) and [NHC](https://github.com/medik8s/node-healthcheck-operator) for high-availability
 * [Konveyor](https://www.konveyor.io/) for migration from other platforms
+* [Faros](https://faros.dev/) deploy on small footprint, bare-metal clusters
 
 # Deployment
 
