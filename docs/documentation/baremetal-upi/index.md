@@ -126,4 +126,67 @@ Click on Create Hyperconverged button, all the defaults should be fine.
 
 ## Providing storage
 
+Shared storage is not mandatory for OKD Virtualization, but without a doubt it provides many advantages over a configuration based on local storage which is considered a suboptimal configuration.
+
+Between the advantages enabled by shared storage is worth to mention:
+- Live migration of Virtual Machines
+  - Founding pillar for HA
+  - Enables seamless cluster upgrades without the need to shut down and restart all the VMs on each upgrade
+- Centralized storage management enabling elastic scalability
+- Centralized backup
+
+### Shared storage
 TBD: rook.io deployment
+
+### Local storage
+You can configure local storage for your virtual machines by using the OKD Virtualization hostpath provisioner feature.
+
+When you install OKD Virtualization, the hostpath provisioner Operator is automatically installed. To use it, you must:
+- Configure SELinux on your worker nodes via a Machine Config object.
+- Create a HostPathProvisioner custom resource.
+- Create a StorageClass object for the hostpath provisioner.
+
+#### Configuring SELinux for the hostpath provisioner on OKD worker nodes
+You can configure SELinux for your OKD Worker nodes using a [MachineConfig](./contrib/machineconfig-selinux-hpp.yaml).
+
+#### Creating a CR for the HostPathProvisioner operator
+1. Create the HostPathProvisioner custom resource file. For example:
+    ```bash
+    $ touch hostpathprovisioner_cr.yaml
+    ```
+2. Edit that file. For example:
+    ```yaml
+    apiVersion: hostpathprovisioner.kubevirt.io/v1beta1
+    kind: HostPathProvisioner
+    metadata:
+      name: hostpath-provisioner
+    spec:
+      imagePullPolicy: IfNotPresent
+      pathConfig:
+        path: "/var/hpvolumes" #The path of the directory on the node
+        useNamingPrefix: false #Use the name of the PVC bound to the created PV as part of the directory name.
+    ```
+3. Creating the CR in the `kubevirt-hyperconverged` namespace:
+    ```bash
+    $ oc create -n kubevirt-hyperconverged -f hostpathprovisioner_cr.yaml
+    ```
+
+#### Creating a StorageClass for the HostPathProvisioner operator
+1. Create the YAML file for the storage class. For example:
+    ```bash
+    $ touch hppstorageclass.yaml
+    ```
+2. Edit that file. For example:
+    ```yaml
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      name: hostpath-provisioner
+    provisioner: kubevirt.io/hostpath-provisioner
+    reclaimPolicy: Delete
+    volumeBindingMode: WaitForFirstConsumer
+    ```
+3. Creating the Storage Class object:
+    ```bash
+    $ oc create -f hppstorageclass.yaml
+    ```
