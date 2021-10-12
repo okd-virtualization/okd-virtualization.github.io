@@ -56,20 +56,10 @@ systemctl enable --now haproxy.service
 
 ## Installing OKD
 
-Despite OKD current stable-4 branch is delivering OKD 4.7 we recommend to use ODK 4.8.
-You can download the installer from <https://amd64.origin.releases.ci.openshift.org/#4.8.0-0.okd>
+OKD current stable-4 branch is delivering OKD 4.8. If you're using an older version we recommend to update to ODK 4.8.
 
-In order to get the 4.8.0 installer you’ll need the released openshift client.
-You can get it from <https://github.com/openshift/okd/releases> ; look for openshift-client-linux archive.
-
-Extract the openshift-client-linux archive and you’ll have the `oc` command.
-
-Now you can follow instructions on <https://amd64.origin.releases.ci.openshift.org/#4.8.0-0.okd> , selecting the latest build which passed the update test.
-It’s safe to ignore failures on VSphere.
-The command to execute looks like: `oc adm release extract --tools ...`.
-It will download the openshift-client-linux and openshift-install-linux archives for you.
-
-At this point you should have all OKD nodes already installed with Fedora CoreOS and the bastion with all the needed services. Check that all nodes and the bastion have the correct ip addresses and fqdn and that they are resolvable via DNS.
+At this point you should have all OKD nodes ready to be installed with Fedora CoreOS and the bastion with all the needed services.
+Check that all nodes and the bastion have the correct ip addresses and fqdn and that they are resolvable via DNS.
 
 As we are going to use baremetal UPI installation you’ll need to create a `install-config.yaml` following the example for
 [installing bare metal](https://docs.okd.io/latest/installing/installing_bare_metal/installing-bare-metal.html#installation-bare-metal-config-yaml_installing-bare-metal)
