@@ -1,9 +1,6 @@
 ---
 title: Documentation
+redirect_to: 'https://www.okd.io/guides/overview/'
 ---
 
-# Documentation
-
-## Guides
-
-* [Guide to installing OKD Virtualization on Bare Metal UPI](/documentation/baremetal-upi/index)
+This page moved to https://www.okd.io/guides/overview/
