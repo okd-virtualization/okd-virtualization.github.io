@@ -126,7 +126,31 @@ Between the advantages enabled by shared storage is worth to mention:
 - Centralized backup
 
 ### Shared storage
-TBD: rook.io deployment
+
+#### rook.io with Ceph
+[//]: # (Update for community operators catalog when rook will be available there)
+rook.io operator is still not available in the Community Operators catalog but it can be manually deployed.
+Please notice that being not managed by the OLM, it's not going to receive any automatic update.
+
+```bash
+$ ROOK_VERSION=v1.7.8
+$ git clone --single-branch --branch ${ROOK_VERSION} https://github.com/rook/rook.git
+$ oc create -f rook/cluster/examples/kubernetes/ceph/crds.yaml -f rook/cluster/examples/kubernetes/ceph/common.yaml
+$ oc create -f rook/cluster/examples/kubernetes/ceph/operator-openshift.yaml
+$ oc create -f rook/cluster/examples/kubernetes/ceph/cluster.yaml
+$ oc create -f rook/cluster/examples/kubernetes/ceph/csi/rbd/storageclass.yaml
+```
+
+`examples/kubernetes/ceph/cluster.yaml` contains typical settings for a production cluster and it requires at least three worker nodes.
+Please see the [Ceph Cluster documentation on rook.io](https://rook.io/docs/rook/v1.7/ceph-cluster-crd.html) to tune the configuration according to your specific needs.
+
+`rook/cluster/examples/kubernetes/ceph/csi/rbd/storageclass.yaml` contains typical settings for a production scenario with replica 3: your data is replicated on three different worker nodes (so it requires at least three worker nodes) and intermittent or long-lasting single node failures will not result in data unavailability or loss. It uses the CSI driver for block devices.
+See the [Ceph Pool CRD topic on rook.io documentation](https://rook.io/docs/rook/v1.7/ceph-pool-crd.html) for more details on the settings.
+
+You can check the status of your Ceph cluster with:
+```bash
+$ oc get CephCluster -n rook-ceph  rook-ceph -o json | jq '.status'
+```
 
 ### Local storage
 You can configure local storage for your virtual machines by using the OKD Virtualization hostpath provisioner feature.
