@@ -61,7 +61,7 @@ systemctl enable --now haproxy.service
 
 ## Installing OKD
 
-OKD current stable-4 branch is delivering OKD 4.9.0. If you're using an older version we recommend to update to ODK 4.9.0.
+OKD current stable-4 branch is delivering OKD 4.9. If you're using an older version we recommend to update to ODK 4.9.
 
 At this point you should have all OKD nodes ready to be installed with Fedora CoreOS and the bastion with all the needed services.
 Check that all nodes and the bastion have the correct ip addresses and fqdn and that they are resolvable via DNS.
