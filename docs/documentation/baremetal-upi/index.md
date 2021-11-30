@@ -20,7 +20,12 @@ For the bastion / service host you can use CentOS Stream 8.
 You can follow [CentOS 8 installation documentation](https://docs.centos.org/en-US/8-docs/standard-install/)
 but we recommend using the latest [CentOS Stream 8 ISO](http://isoredirect.centos.org/centos/8-stream/isos/x86_64/).
 
-For the OKD nodes you’ll need Fedora CoreOS. You can get it from [Get Fedora!](https://getfedora.org/en/coreos?stream=stable) website, choose the Bare Metal ISO.
+For the OKD nodes you’ll need Fedora CoreOS.
+In order to get the correct ISO for installing OKD you can get the link from the installer:
+
+```bash
+openshift-install coreos print-stream-json | grep iso
+```
 
 ## Configure the bastion to host needed services
 
@@ -56,7 +61,7 @@ systemctl enable --now haproxy.service
 
 ## Installing OKD
 
-OKD current stable-4 branch is delivering OKD 4.8. If you're using an older version we recommend to update to ODK 4.8.
+OKD current stable-4 branch is delivering OKD 4.9. If you're using an older version we recommend to update to ODK 4.9.
 
 At this point you should have all OKD nodes ready to be installed with Fedora CoreOS and the bastion with all the needed services.
 Check that all nodes and the bastion have the correct ip addresses and fqdn and that they are resolvable via DNS.
@@ -93,9 +98,12 @@ echo '(allow rpcbind_t unreserved_port_t (udp_socket (name_bind)))' >local_rpcbi
 semodule -i local_rpcbind.cil
 ```
 
-* master nodes are failing the first boot with access denied to `[::1]:53` <https://github.com/openshift/okd/issues/897>
+* bpf
 
-While the master node is booting edit the grub config adding to kernel command line `console=null`.
+```
+echo '(allow container_runtime_t init_t (bpf (prog_run)))' >local_bpf.cil
+semodule -i local_bpf.cil
+```
 
 * worker nodes may fail on openvswitch
 
